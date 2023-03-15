@@ -1,4 +1,4 @@
-# <strong>LearningAndroid_Java :mobile_phone_off: :coffee:</strong>
+# <strong>LearningAndroid_Java :iphone: :coffee:</strong>
  
 Este repositorio, contem projectos referentes ao desenvolvimento de <strong>aplicativos android</strong>, usando o Android Studio <i>Electric Eel | 2022.1.1</i> para fins academicos na disciplina de <strong>Aplicacoes Moveis</strong> ministradas  [@ataidechilaule](https://github.com/ataidechilaule);
 
