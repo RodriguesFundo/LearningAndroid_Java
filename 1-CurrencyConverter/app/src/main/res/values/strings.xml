@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Conversor de moeda</string>
+    <string name="usd">USD</string>
+    <string name="eur">EUR</string>
+    <string name="pound">POUND</string>
+    <string name="rand">RAND</string>
+    <string name="mzn">MZN</string>
+    <string name="converter">Converter</string>
+
+</resources>
