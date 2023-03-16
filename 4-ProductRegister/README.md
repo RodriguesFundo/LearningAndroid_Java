@@ -15,8 +15,10 @@ Uma aplicação de registo de produtos
 - <Strong>Register Product:</Strong> Um botão que fará o registo de produtos
 
 <hr>
-<p>O usuário preenche os dados do produto (acima descrito) e ao clicar no botão, ele insere os dados numa estrutura de dados (neste caso <a><i>ArrayList</i></a>)</p>
-<p>Se a operação de inserção for bem sucedida, ira mostrar uma mensagem de sucesso na própria tela, caso contrario, uma mensagem de erro em forma de <a><i>Toast</i></a></p>
+<p>O usuário preenche os dados do produto (acima descrito) e ao clicar no botão, ele insere os dados numa estrutura de dados (neste caso <a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html"><i>ArrayList</i></a>
+)</p>
+<p>Se a operação de inserção for bem sucedida, ira mostrar uma mensagem de sucesso na própria tela, caso contrario, uma mensagem de erro em forma de <a href="https://developer.android.com/guide/topics/ui/notifiers/toasts"><i>Toast</i></a>
+</p>
 
 <p>Na consola do Android Studio, será impresso todos os produtos existentes </p>
 
@@ -24,7 +26,8 @@ Uma aplicação de registo de produtos
 
 ## Extras
 
-<p> A partir deste ponto, para poder "pegar" os dados que estao no meu layout e usar na minha classe.java, passarei a usar o <a><i>dataBinding</i></a>.</p>
+<p> A partir deste ponto, para poder "pegar" os dados que estao no meu layout e usar na minha classe.java, passarei a usar o <a href="https://developer.android.com/topic/libraries/data-binding"><i>dataBinding</i></a>
+.</p>
 
 <p>Para usarmos este recurso, devemos seguir os seguintes passos:</p>
 
@@ -62,6 +65,19 @@ Uma aplicação de registo de produtos
 NomeBindig.var.setText("");
 
 NomeBindig.var.getText();
+
+<hr/>
+<hr/>
+
+<div style="text-align: center; width: 100%;">
+  <img style="display: inline-block; margin: 0 10px;" width="30%" alt="Tela1" src="https://user-images.githubusercontent.com/105431834/225765187-43522198-b1a2-46ab-a2fc-6e4bef8365a4.jpeg"/>
+  <img style="display: inline-block; margin: 0 10px;" width="30%" alt="Tela1" src="https://user-images.githubusercontent.com/105431834/225767317-c61d6313-b319-4380-8fbb-ca7898a1847d.jpeg"/>
+  <img style="display: inline-block; margin: 0 10px;" width="30%" alt="Tela1" src="https://user-images.githubusercontent.com/105431834/225767549-3f11cd6c-7547-442e-9dc7-1cb8142a417c.jpeg"/>
+</div>
+<hr/>
+
+https://user-images.githubusercontent.com/105431834/225772040-56cf49ed-2468-4329-8e35-706ef914a459.mp4
+
 
 
 
