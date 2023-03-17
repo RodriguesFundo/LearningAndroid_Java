@@ -8,3 +8,5 @@ Este repositorio é constituido pelos seguintes projectos:
 - [Conversor de moedas](https://github.com/RodriguesFundo/LearningAndroid_Java/tree/main/1-CurrencyConverter) :moneybag:
 
 - [Carta de conducao](https://github.com/RodriguesFundo/LearningAndroid_Java/tree/main/5-LicenseDrive) :car:
+
+- [Registro de produtos](https://github.com/RodriguesFundo/LearningAndroid_Java/tree/main/4-ProductRegister) :memo:
