@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/txtMainLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="125dp"
+        android:text="Product registration"
+        android:textSize="31sp"
+        app:layout_constraintBottom_toTopOf="@+id/inputPrice"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/inputName"
+        android:layout_width="283dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="82dp"
+        android:ems="10"
+        android:hint="Name:"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtMainLayout" />
+
+    <EditText
+        android:id="@+id/inputPrice"
+        android:layout_width="283dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="82dp"
+        android:ems="10"
+        android:hint="Price"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputName"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/inputQuantity"
+        android:layout_width="283dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="82dp"
+        android:ems="10"
+        android:hint="Quantity"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputPrice" />
+
+    <EditText
+        android:id="@+id/inputDate"
+        android:layout_width="283dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="82dp"
+        android:ems="10"
+        android:hint="Exp: YYYY/MM/DD"
+        android:inputType="date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputQuantity" />
+
+    <Button
+        android:id="@+id/btnRegistrer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:text="Register product"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputDate" />
+
+    <TextView
+        android:id="@+id/txtResult"
+        android:layout_width="278dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="87dp"
+        android:layout_marginBottom="29dp"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/btnRegistrer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputDate" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
