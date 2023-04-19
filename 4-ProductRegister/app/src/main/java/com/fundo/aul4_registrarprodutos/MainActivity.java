@@ -5,31 +5,29 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.fundo.aul4_registrarprodutos.databinding.ActivityMainBinding;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     private  ActivityMainBinding mainBinding;
-//    private static final String TAG= "Static Changed";
-    int i=0;
+
     ArrayList<Product> products= new ArrayList<>();
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mainBinding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(mainBinding.getRoot());
-
 
         mainBinding.btnRegistrer.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,26 +59,24 @@ public class MainActivity extends AppCompatActivity {
 
                     // Se todos os campos obrigatórios estiverem preenchidos, continue com o registro do produto
 
+                    // Adiciona um novo produto à lista
+                    products.add(new Product(
+                            mainBinding.inputName.getText().toString(),
+                            Double.parseDouble(mainBinding.inputPrice.getText().toString()),
+                            Integer.parseInt(mainBinding.inputQuantity.getText().toString()),
+                            LocalDate.parse(mainBinding.inputDate.getText().toString(), formatter)
+                    ));
 
 
+                    // Notifica o ArrayAdapter que a lista de produtos mudou para que ele possa atualizar a exibição
+                    //productArrayAdapter.notifyDataSetChanged();
 
-                        //Adiciona um novo poduto
-                        products.add(new Product(
-                                mainBinding.inputName.getText().toString(),
-                                Double.parseDouble(mainBinding.inputPrice.getText().toString()),
-                                Integer.parseInt(mainBinding.inputQuantity.getText().toString()),
-                                LocalDate.parse(mainBinding.inputDate.getText().toString(), formatter)
-                        ));
                         //Exibe uma mensagem na tela que o produto foi registrado
                         mainBinding.txtResult.setText(mainBinding.inputName.getText().toString()+" registrado!");
 
-                        //Mostra na consola/LogCat os produtos adicionados
-                        for (Product product : products
-                        ){
-                            i++;
-                            System.out.println(i+" - "+product.toString());
-
-                        }
+                    Intent intent = new Intent(MainActivity.this, ProducResult.class);
+                    intent.putParcelableArrayListExtra("listaProduct", products);
+                    startActivity(intent);
 
 
                 } catch (DateTimeParseException e) {

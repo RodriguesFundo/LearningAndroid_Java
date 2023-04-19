@@ -1,18 +1,17 @@
 package com.fundo.aul4_registrarprodutos;
 
+import android.os.Build;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 import java.time.LocalDate;
-import java.util.Date;
 
-public class Product {
+public class Product implements Parcelable {
 
     private String name;
     private double price;
     private int quantity;
     private LocalDate expirationDate;
-
-    //--------------------------Constructor----------------------------------------------
-    public Product() {}
 
     public Product(String name, double price, int quantity, LocalDate expirationDate) {
         this.name = name;
@@ -21,7 +20,26 @@ public class Product {
         this.expirationDate = expirationDate;
     }
 
-    //--------------------------Get & Set----------------------------------------------
+    protected Product(Parcel in) {
+        name = in.readString();
+        price = in.readDouble();
+        quantity = in.readInt();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            expirationDate = (LocalDate) in.readSerializable();
+        }
+    }
+
+    public static final Creator<Product> CREATOR = new Creator<Product>() {
+        @Override
+        public Product createFromParcel(Parcel in) {
+            return new Product(in);
+        }
+
+        @Override
+        public Product[] newArray(int size) {
+            return new Product[size];
+        }
+    };
 
     public String getName() {
         return name;
@@ -63,5 +81,20 @@ public class Product {
                 ", quantity=" + quantity +
                 ", expirationDate=" + expirationDate +
                 '}';
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(name);
+        dest.writeDouble(price);
+        dest.writeInt(quantity);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            dest.writeSerializable(expirationDate);
+        }
     }
 }
